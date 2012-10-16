@@ -5,7 +5,9 @@ module ActiveAdmin::Globalize3
       translates(*args)
       args.extract_options!
 
-      translation_class.instance_eval &block
+      if block
+        translation_class.instance_eval &block
+      end
       translation_class.attr_accessible :locale
       translation_class.attr_accessible *args
 

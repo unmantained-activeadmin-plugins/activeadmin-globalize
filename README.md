@@ -20,7 +20,6 @@ end
 form do |f|
   # ...
   f.translated_inputs "Translated fields" do |t|
-    t.input :locale, as: :hidden
     t.input :title
     t.input :content
   end
