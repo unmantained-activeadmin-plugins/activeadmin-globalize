@@ -1,0 +1,6 @@
+en:
+  active_admin:
+    globalize3:
+      language:
+        it: "Italian"
+        en: "English"
