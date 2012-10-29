@@ -17,6 +17,14 @@ end
 ## Editor configuration
 
 ```ruby
+
+index do
+  # ...
+  translation_status
+  # ...
+  default_actions
+end
+
 form do |f|
   # ...
   f.translated_inputs "Translated fields" do |t|

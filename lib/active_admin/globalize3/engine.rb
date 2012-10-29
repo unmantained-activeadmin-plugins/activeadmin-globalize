@@ -8,7 +8,7 @@ module ActiveAdmin
         ]
       end
 
-      config.to_prepare do
+      initializer "add assets" do
         ActiveAdmin.application.register_stylesheet "active_admin/active_admin_globalize3.css", :media => :screen
         ActiveAdmin.application.register_javascript "active_admin/active_admin_globalize3.js"
       end
