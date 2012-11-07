@@ -1,12 +1,14 @@
 $ ->
-  $(".locales-tabs").each ->
-    tabs = $("li > a", this)
-    contents = $(this).siblings(".locales-contents").children()
+  $(".activeadmin-translations > ul").each ->
+    $tabs = $("li > a", this)
+    $contents = $(this).siblings("fieldset")
 
-    tabs.click ->
-      tabs.removeClass("active")
-      contents.hide()
-      $($(this).addClass("active").attr("href")).show()
+    $tabs.click ->
+      $tab = $(this)
+      $tabs.not($tab).removeClass("active")
+      $tab.addClass("active")
+      $contents.hide()
+      $contents.filter($tab.attr("href")).show()
       false
 
-    tabs.eq(0).click()
+    $tabs.eq(0).click()

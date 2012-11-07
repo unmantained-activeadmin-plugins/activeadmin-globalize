@@ -11,25 +11,25 @@ module ActiveAdmin
           object.translations.build(locale: locale) unless translation.present?
         end
 
-        inputs name do
-          template.content_tag(:ul, class: "locales-tabs") do
-            object.translations.map do |translation|
-              locale = translation.locale
+        form_buffers.last << template.content_tag(:div, class: "activeadmin-translations") do
+          template.content_tag(:ul, class: "available-locales") do
+            I18n.available_locales.sort.map do |locale|
               template.content_tag(:li) do
-                template.content_tag(:a, I18n.t(:"active_admin.globalize3.language.#{locale}"), href:"#locale-#{locale}", data: { behaviour: "tab", tab_scope: "globalize" })
+                template.content_tag(:a, I18n.t(:"active_admin.globalize3.language.#{locale}"), href:".locale-#{locale}")
               end
             end.join.html_safe
           end <<
-          template.content_tag(:div, class:"locales-contents") do
-            semantic_fields_for(:translations) do |t|
-              template.content_tag(:div, class: "locale", id:"locale-#{t.object.locale}") do
-                t.inputs do
-                  t.input :locale, as: :hidden
-                  yield(t)
-                end
-              end
+          object.translations.map do |translation|
+            fields = proc do |form|
+              form.input(:locale, as: :hidden)
+              block.call(form)
             end
-          end
+            inputs_for_nested_attributes(
+              for: [:translations, translation ],
+              class: "inputs locale locale-#{translation.locale}",
+              &fields
+            )
+          end.join.html_safe
         end
       end
 
