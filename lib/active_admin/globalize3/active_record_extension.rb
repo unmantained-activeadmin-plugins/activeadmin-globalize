@@ -10,7 +10,7 @@ module ActiveAdmin::Globalize3
     end
 
     def active_admin_translates(*args, &block)
-      translates(*args)
+      translates(*args.dup)
       args.extract_options!
 
       if block

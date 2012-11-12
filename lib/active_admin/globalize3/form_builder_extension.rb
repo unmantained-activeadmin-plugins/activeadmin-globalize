@@ -4,13 +4,6 @@ module ActiveAdmin
       extend ActiveSupport::Concern
 
       def translated_inputs(name = "Translations", &block)
-        I18n.available_locales.each do |locale|
-          translation = object.translations.find do |translation|
-            translation.locale.to_sym == locale.to_sym
-          end
-          object.translations.build(locale: locale) unless translation.present?
-        end
-
         form_buffers.last << template.content_tag(:div, class: "activeadmin-translations") do
           template.content_tag(:ul, class: "available-locales") do
             I18n.available_locales.sort.map do |locale|
@@ -19,9 +12,11 @@ module ActiveAdmin
               end
             end.join.html_safe
           end <<
-          object.translations.map do |translation|
+          I18n.available_locales.sort.map do |locale|
+            translation = object.translations.find_or_initialize_by_locale(locale)
             fields = proc do |form|
               form.input(:locale, as: :hidden)
+              form.input(:id, as: :hidden)
               block.call(form)
             end
             inputs_for_nested_attributes(
