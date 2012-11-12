@@ -7,7 +7,7 @@ require 'active_admin/globalize3/form_builder_extension'
 require 'active_admin/globalize3/active_record_extension'
 require 'active_admin/globalize3/index_table_for_extension'
 
-require 'active_admin/friendly_id/static'
+require 'active_admin/friendly_id/editable'
 
 ActiveRecord::Base.send :extend, ActiveAdmin::Globalize3::ActiveRecordExtension
 

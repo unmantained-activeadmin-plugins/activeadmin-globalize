@@ -36,11 +36,20 @@ end
 
 ## Friendly ID
 
-If you want to use Friendly ID togheter with Globalize3, this is the way to go:
+If you want to use Friendly ID together with Globalize3, this is the way to go:
 
 ```ruby
   active_admin_translates :title, :description, :slug do
     extend FriendlyId
     friendly_id :title, use: :slugged
+  end
+```
+
+Want to make the slug editable by the user?
+
+```ruby
+  active_admin_translates :title, :description, :slug do
+    extend FriendlyId
+    friendly_id :title, use: [:slugged, :editable]
   end
 ```
