@@ -19,7 +19,7 @@ module FriendlyId
         if found
           found.tap { |f| f.translations.reload }
         else
-          super
+          find_one_without_friendly_id(id)
         end
       end
       protected :find_one
