@@ -17,7 +17,6 @@ end
 ## Editor configuration
 
 ```ruby
-
 index do
   # ...
   translation_status
@@ -33,4 +32,15 @@ form do |f|
   end
   # ...
 end
+```
+
+## Friendly ID
+
+If you want to use Friendly ID togheter with Globalize3, this is the way to go:
+
+```ruby
+  active_admin_translates :title, :description, :slug do
+    extend FriendlyId
+    friendly_id :title, use: :slugged
+  end
 ```
