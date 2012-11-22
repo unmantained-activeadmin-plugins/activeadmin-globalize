@@ -13,7 +13,8 @@ module ActiveAdmin
             end.join.html_safe
           end <<
           I18n.available_locales.sort.map do |locale|
-            translation = object.translations.find_or_initialize_by_locale(locale)
+            translation = object.translations.find { |t| t.locale.to_s == locale.to_s }
+            translation ||= object.translations.build(locale: locale)
             fields = proc do |form|
               form.input(:locale, as: :hidden)
               form.input(:id, as: :hidden)
