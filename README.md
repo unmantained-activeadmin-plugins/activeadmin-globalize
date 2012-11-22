@@ -1,5 +1,4 @@
 # ActiveAdmin::Globalize3
-
 Makes it easy to translate your resource fields.
 
 ## Installation
@@ -36,20 +35,5 @@ end
 
 ## Friendly ID
 
-If you want to use Friendly ID together with Globalize3, this is the way to go:
-
-```ruby
-  active_admin_translates :title, :description, :slug do
-    extend FriendlyId
-    friendly_id :title, use: :slugged
-  end
-```
-
-Want to make the slug editable by the user?
-
-```ruby
-  active_admin_translates :title, :description, :slug do
-    extend FriendlyId
-    friendly_id :title, use: [:slugged, :editable]
-  end
-```
+If you want to use Friendly ID together with Globalize3, please take a look
+at the `activeadmin-seo` gem.
