@@ -19,7 +19,7 @@ $ ->
         $tabs.eq(0).click()
 
   # this is to handle elements created with has_many
-  $("a").live "click", ->
+  $(document).on "click", "a", ->
     setTimeout(
       -> translations()
       50
