@@ -5,3 +5,6 @@ it:
       language:
         it: "Italiano"
         en: "Inglese"
+        es: "Spagnolo"
+        de: "Tedesco"
+        pt: "Portoghese"
