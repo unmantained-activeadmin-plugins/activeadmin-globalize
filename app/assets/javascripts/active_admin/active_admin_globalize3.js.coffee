@@ -1,6 +1,7 @@
 $ ->
 
   translations = ->
+
     $(".activeadmin-translations > ul").each ->
       $dom = $(this)
       if !$dom.data("ready")
@@ -17,6 +18,12 @@ $ ->
           false
 
         $tabs.eq(0).click()
+
+        $tabs.each ->
+          $tab = $(@)
+          $content = $contents.filter($tab.attr("href"))
+          containsErrors = $content.find(".input.error").length > 0
+          $tab.toggleClass("error", containsErrors)
 
   # this is to handle elements created with has_many
   $("a").bind "click", ->

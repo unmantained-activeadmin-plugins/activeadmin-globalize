@@ -23,6 +23,9 @@
           padding-bottom: 8px + 4px
           margin-bottom: 0
 
+          &.error
+            color: #932419
+
           &.active
             background: #f4f4f4
             +inset-shadow(0, 4px, 4px, #ddd)
@@ -30,6 +33,7 @@
             margin-bottom: 0
             +gradient($secondary-gradient-stop, #f4f4f4)
             text-shadow: 0 1px 0 white
+            color: #666 !important
 
     &> fieldset.inputs
       margin-bottom: 0
