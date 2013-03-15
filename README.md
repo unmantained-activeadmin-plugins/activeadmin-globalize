@@ -25,13 +25,14 @@ end
 
 form do |f|
   # ...
-  f.translated_inputs "Translated fields" do |t|
+  f.translated_inputs "Translated fields", switch_locale: false do |t|
     t.input :title
     t.input :content
   end
   # ...
 end
 ```
+If `switch_locale` is set, each tab will be rendered switching locale.
 
 ## Friendly ID
 
