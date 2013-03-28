@@ -38,3 +38,10 @@ If `switch_locale` is set, each tab will be rendered switching locale.
 
 If you want to use Friendly ID together with Globalize3, please take a look
 at the `activeadmin-seo` gem.
+
+## Hints
+
+To use the dashed locale keys as 'pt-BR' or 'pt-PT' you need to convert a string to symbol (in application.rb)
+
+  config.i18n.available_locales = [:en, :it, :de, :es, :"pt-BR"]
+
