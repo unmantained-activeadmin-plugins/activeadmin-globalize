@@ -6,9 +6,11 @@ module ActiveAdmin
       def translated_inputs(name = "Translations", options = {}, &block)
         options.symbolize_keys!
         switch_locale = options.fetch(:switch_locale, false)
+        auto_sort = options.fetch(:auto_sort, :false)
         form_buffers.last << template.content_tag(:div, class: "activeadmin-translations") do
           template.content_tag(:ul, class: "available-locales") do
-            I18n.available_locales.map do |locale|
+            locales = auto_sort ? I18n.available_locales.sort : I18n.available_locales
+            locales.map do |locale|
               template.content_tag(:li) do
                 I18n.with_locale(switch_locale ? locale : I18n.locale) do
                   template.content_tag(:a, I18n.t(:"active_admin.globalize3.language.#{locale}"), href:".locale-#{locale}")
