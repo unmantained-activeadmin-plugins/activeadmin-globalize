@@ -1,7 +1,7 @@
 module ActiveAdmin
   module Globalize3
     class Engine < ::Rails::Engine
-      initializer "Railsyard precompile hook", group: :assets do |app|
+      initializer "Railsyard precompile hook", group: :all do |app|
         app.config.assets.precompile += [
           "active_admin/active_admin_globalize3.css",
           "active_admin/active_admin_globalize3.js"
