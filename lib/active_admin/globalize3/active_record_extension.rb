@@ -17,12 +17,6 @@ module ActiveAdmin::Globalize3
         translation_class.instance_eval &block
       end
 
-      unless translation_class.ancestors.map(&:to_s).include?('ActiveModel::ForbiddenAttributesProtection')
-        translation_class.attr_accessible :locale
-        translation_class.attr_accessible *args
-      end
-
-      attr_accessible :translations_attributes unless ancestors.map(&:to_s).include?('ActiveModel::ForbiddenAttributesProtection')
       accepts_nested_attributes_for :translations, allow_destroy: true
 
       include Methods
@@ -30,3 +24,4 @@ module ActiveAdmin::Globalize3
 
   end
 end
+
