@@ -1,4 +1,4 @@
-require 'globalize3'
+require 'globalize'
 require 'activeadmin'
 
 require 'active_admin/views/index_as_table'
