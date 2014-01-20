@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ActiveAdmin::Globalize::VERSION
   s.authors     = ["Stefano Verna"]
   s.email       = ["stefano.verna@gmail.com"]
-  s.homepage    = "http://github.com/cantierecreativo/activeadmin-globalize"
+  s.homepage    = "http://github.com/stefanoverna/activeadmin-globalize"
   s.summary     = "Handles globalize translations"
   s.description = "Handles globalize translations"
 
