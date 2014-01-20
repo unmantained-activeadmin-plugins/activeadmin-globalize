@@ -1,10 +1,10 @@
-module ActiveAdmin::Globalize3
+module ActiveAdmin::Globalize
   module ActiveRecordExtension
 
     module Methods
       def translation_names
         self.translations.map(&:locale).map do |locale|
-          I18n.t("active_admin.globalize3.language.#{locale}")
+          I18n.t("active_admin.globalize.language.#{locale}")
         end.uniq.sort
       end
     end
