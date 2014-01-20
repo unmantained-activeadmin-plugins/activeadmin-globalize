@@ -4,7 +4,7 @@ Makes it easy to translate your resource fields.
 ## Installation
 
 ```ruby
-gem "activeadmin-globalize", github: 'cantierecreativo/activeadmin-globalize',
+gem "activeadmin-globalize", github: 'stefanoverna/activeadmin-globalize',
 branch: 'master'
 ```
 We still need to use GitHub because ActiveAdmin is still in active development
