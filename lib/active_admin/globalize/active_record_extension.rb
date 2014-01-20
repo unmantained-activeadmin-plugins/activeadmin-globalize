@@ -1,10 +1,10 @@
-module ActiveAdmin::Globalize3
+module ActiveAdmin::Globalize
   module ActiveRecordExtension
 
     module Methods
       def translation_names
         self.translations.map(&:locale).map do |locale|
-          I18n.t("active_admin.globalize3.language.#{locale}")
+          I18n.t("active_admin.globalize.language.#{locale}")
         end.uniq.sort
       end
     end
@@ -17,12 +17,6 @@ module ActiveAdmin::Globalize3
         translation_class.instance_eval &block
       end
 
-      unless translation_class.ancestors.include? ::ActiveModel::ForbiddenAttributesProtection
-        translation_class.attr_accessible :locale
-        translation_class.attr_accessible *args
-      end
-
-      attr_accessible :translations_attributes unless ancestors.include? ::ActiveModel::ForbiddenAttributesProtection
       accepts_nested_attributes_for :translations, allow_destroy: true
 
       include Methods
@@ -30,3 +24,4 @@ module ActiveAdmin::Globalize3
 
   end
 end
+

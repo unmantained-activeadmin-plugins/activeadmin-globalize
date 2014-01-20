@@ -1,11 +1,15 @@
-# ActiveAdmin::Globalize3
+# ActiveAdmin::Globalize
 Makes it easy to translate your resource fields.
 
 ## Installation
 
 ```ruby
-gem "activeadmin-globalize3"
+gem "activeadmin-globalize", github: 'cantierecreativo/activeadmin-globalize',
+branch: 'master'
 ```
+We still need to use GitHub because ActiveAdmin is still in active development
+and there's no released gem compatible with Rails 4.
+
 ## Your model
 
 ```ruby
@@ -36,12 +40,13 @@ If `switch_locale` is set, each tab will be rendered switching locale.
 
 ## Friendly ID
 
-If you want to use Friendly ID together with Globalize3, please take a look
+If you want to use Friendly ID together with Globalize, please take a look
 at the `activeadmin-seo` gem.
 
 ## Hints
 
-To use the dashed locale keys as 'pt-BR' or 'pt-PT' you need to convert a string to symbol (in application.rb)
+To use the dashed locale keys as 'pt-BR' or 'pt-PT' you need to convert a string
+to symbol (in application.rb)
 
   config.i18n.available_locales = [:en, :it, :de, :es, :"pt-BR"]
 

@@ -1,6 +1,6 @@
 it:
   active_admin:
-    globalize3:
+    globalize:
       translations: "Traduzioni"
       language:
         it: "Italiano"
@@ -9,3 +9,4 @@ it:
         de: "Tedesco"
         pt-BR: "Portoghese"
         pt-PT: "Portoghese (Portogallo)"
+
