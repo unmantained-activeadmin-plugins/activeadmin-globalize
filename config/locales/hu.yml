@@ -1,0 +1,13 @@
+hu:
+  active_admin:
+    globalize:
+      translations: "Fordítások"
+      language:
+        it: "Olasz"
+        en: "Angol"
+        es: "Spanyol"
+        de: "Német"
+        hu: "Magyar"
+        pt-BR: "Portuguese"
+        pt-PT: "Portuguese (Portugal)"
+
