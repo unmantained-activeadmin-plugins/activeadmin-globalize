@@ -3,11 +3,13 @@ hu:
     globalize:
       translations: "Fordítások"
       language:
-        it: "Olasz"
+        de: "Német"
         en: "Angol"
         es: "Spanyol"
-        de: "Német"
+        fr: "Francia"
         hu: "Magyar"
+        it: "Olasz"
         pt-BR: "Portuguese"
         pt-PT: "Portuguese (Portugal)"
+        tr: "Török"
 

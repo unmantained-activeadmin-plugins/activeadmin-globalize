@@ -3,11 +3,13 @@ pt-PT:
     globalize:
       translations: "Traduções"
       language:
-        it: "Italiano"
+        de: "Alemão"
         en: "Inglês"
         es: "Espanhol"
-        de: "Alemão"
+        fr: "Francês"
         hu: "Húngaro"
+        it: "Italiano"
         pt-BR: "Português"
         pt-PT: "Português (Portugal)"
+        tr: "Turco"
 
