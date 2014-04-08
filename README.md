@@ -20,6 +20,10 @@ end
 ## Editor configuration
 
 ```ruby
+# if you are using Rails 4 or Strong Parameters:
+permit_params translations_attributes: [:locale, :title, :content]
+
+
 index do
   # ...
   translation_status
