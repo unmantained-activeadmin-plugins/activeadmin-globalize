@@ -1,0 +1,14 @@
+es:
+  active_admin:
+    globalize:
+      translations: "Traducciones"
+      language:
+        de: "Alemán"
+        en: "Inglés"
+        es: "Español"
+        fr: "Francés"
+        hu: "Húngaro"
+        it: "Italiano"
+        pt-BR: "Portugués"
+        pt-PT: "Portugués (Portugal)"
+        tr: "Turco"
